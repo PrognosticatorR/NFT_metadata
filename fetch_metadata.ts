@@ -5,13 +5,12 @@ const {
 } = programs;
 
 const connection = new Connection(clusterApiUrl("mainnet-beta"));
-
-(async function getMetadata() {
-  let mintPubkey = new PublicKey(
-    "EPr4X3pqEMT7Eeu8YH9bt7uTD2PQ96rDP6NGU5PVoXaD"
-  );
+let mintPubkey = new PublicKey("EPr4X3pqEMT7Eeu8YH9bt7uTD2PQ96rDP6NGU5PVoXaD");
+async function getMetadata(mintPubkey: PublicKey) {
   let tokenmetaPubkey = await Metadata.getPDA(mintPubkey);
   const tokenmeta = await Metadata.load(connection, tokenmetaPubkey);
   console.log(JSON.stringify(tokenmeta.data.data, null, 2));
   return tokenmeta.data.data;
-})();
+}
+
+getMetadata(mintPubkey);
