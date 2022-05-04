@@ -1,0 +1,19 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fetch_metadata.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch": "ts-node fetch_metadata.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@metaplex/js": "^4.12.0",
+    "@solana/web3.js": "^1.41.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
